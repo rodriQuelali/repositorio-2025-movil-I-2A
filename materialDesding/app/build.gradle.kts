@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.linearlayout"
+    namespace = "com.example.materialdesding"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.linearlayout"
+        applicationId = "com.example.materialdesding"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
@@ -42,7 +42,6 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    implementation(libs.androidx.gridlayout)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
