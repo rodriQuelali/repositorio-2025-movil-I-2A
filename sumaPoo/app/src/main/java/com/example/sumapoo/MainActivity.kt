@@ -8,6 +8,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.sumapoo.data.Calculadora
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,10 +29,8 @@ class MainActivity : AppCompatActivity() {
         val btnOperar = findViewById<Button>(R.id.btnSuma)
 
         btnOperar.setOnClickListener{
-            val n1 = et1.text.toString().toInt()
-            val n2 = et2.text.toString().toInt()
-            val total = n1 + n2
-            tvR.text = "La suam es: ${total.toString()}"
+            val calUno:Calculadora = Calculadora(et1.text.toString().toFloat(), et2.text.toString().toFloat())
+            tvR.text = "La suam es: ${calUno.resultado.toString()}"
         }
 
     }
