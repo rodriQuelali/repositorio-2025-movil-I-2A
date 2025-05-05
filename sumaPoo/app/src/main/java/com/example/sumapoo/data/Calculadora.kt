@@ -1,15 +1,14 @@
 package com.example.sumapoo.data
 
 class Calculadora  {
-    //atributos
-    var resultado: Float
 
-    constructor(numeroUno: Int, numeroDos:Int){
-        resultado = (numeroDos + numeroUno).toFloat()
+
+    fun suma(a: Int, b: Int):Int{
+        return a + b
     }
 
-    constructor(numeroUno: Float, numeroDos: Float)  {
-        resultado = (numeroDos + numeroUno)
+    fun suma(a: Float, b:Float):Float{
+        return a + b
     }
 
 

@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.sumapoo.data.Calculadora
+import com.google.android.material.textfield.TextInputEditText
 
 
 class MainActivity : AppCompatActivity() {
@@ -23,14 +24,22 @@ class MainActivity : AppCompatActivity() {
         }
 
         //codigo
-        val et1 = findViewById<EditText>(R.id.et1)
-        val et2 = findViewById<EditText>(R.id.et2)
+        val et1 = findViewById<TextInputEditText>(R.id.et1)
+        val et2 = findViewById<TextInputEditText>(R.id.et2)
         val tvR = findViewById<TextView>(R.id.tvResultado)
         val btnOperar = findViewById<Button>(R.id.btnSuma)
 
         btnOperar.setOnClickListener{
-            val calUno:Calculadora = Calculadora(et1.text.toString().toFloat(), et2.text.toString().toFloat())
-            tvR.text = "La suam es: ${calUno.resultado.toString()}"
+            val calUno:Calculadora = Calculadora()
+            val txt1 = et1.text.toString()
+            val txt2 = et2.text.toString()
+
+            if(txt1.contains('.') || txt2.contains('.')){
+                tvR.text = "La suam es: ${calUno.suma(et2.text.toString().toFloat(), et1.text.toString().toFloat())}"
+            }else{
+                tvR.text = "La suam es: ${calUno.suma(et2.text.toString().toInt(), et1.text.toString().toInt())}"
+            }
+
         }
 
     }
