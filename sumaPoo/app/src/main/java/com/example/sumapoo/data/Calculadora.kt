@@ -11,6 +11,36 @@ class Calculadora  {
         return a + b
     }
 
+    fun resta(a: Int, b: Int):Int{
+        return a - b
+    }
+
+    fun resta(a: Float, b:Float):Float{
+        return a - b
+    }
+
+    fun multiplicacion(a: Int, b: Int):Int{
+        return a * b
+    }
+
+    fun multiplicacion(a: Float, b:Float):Float{
+        return a * b
+    }
+
+    fun division(a: Int, b: Int):Int{
+        if(b == 0){
+            return 0
+        }
+        return a / b
+    }
+
+    fun division(a: Float, b:Float):Float{
+        if(b == 0.0f){
+            return 0.0f
+        }
+        return a / b
+    }
+
 
 
 
