@@ -30,15 +30,11 @@ class MainActivity : AppCompatActivity() {
         val btnOperar = findViewById<Button>(R.id.btnSuma)
 
         btnOperar.setOnClickListener{
-            val calUno:Calculadora = Calculadora()
-            val txt1 = et1.text.toString()
-            val txt2 = et2.text.toString()
 
-            if(txt1.contains('.') || txt2.contains('.')){
-                tvR.text = "La suam es: ${calUno.suma(et2.text.toString().toFloat(), et1.text.toString().toFloat())}"
-            }else{
-                tvR.text = "La suam es: ${calUno.suma(et2.text.toString().toInt(), et1.text.toString().toInt())}"
-            }
+            //clear code....
+            val cal = Calculadora()
+            tvR.text = cal.suma(et1.text.toString(), et2.text.toString())
+
 
         }
 

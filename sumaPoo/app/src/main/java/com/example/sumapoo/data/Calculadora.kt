@@ -3,11 +3,21 @@ package com.example.sumapoo.data
 class Calculadora  {
 
 
-    fun suma(a: Int, b: Int):Int{
-        return a + b
+
+
+    fun suma(a: String, b:String):String{
+        if(a.contains('.') || b.contains('.')){
+            val total = a.toFloat() + b.toFloat()
+            if (total.toString().contains(".0")) {
+                return total.toInt().toString()
+            }
+                return total.toFloat().toString()
+        }
+            val total = a.toInt() + b.toInt()
+            return total.toString()
     }
 
-    fun suma(a: Float, b:Float):Float{
+    fun suma(a: Int, b:Int):Int{
         return a + b
     }
 
