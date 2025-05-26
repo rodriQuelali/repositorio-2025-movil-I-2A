@@ -3,18 +3,18 @@ package com.example.sumapoo.data
 class Calculadora  {
 
 
-
-
     fun suma(a: String, b:String):String{
-        if(a.contains('.') || b.contains('.')){
-            val total = a.toFloat() + b.toFloat()
-            if (total.toString().contains(".0")) {
-                return total.toInt().toString()
-            }
-                return total.toFloat().toString()
+        val total = a.toFloat() + b.toFloat()
+        val data = validarEnteroDecimal(total.toString())
+        return data
+    }
+
+    private fun validarEnteroDecimal(t:String):String{
+        val num = t.toFloat()
+        if (num % 1.0f == 0.0f){
+            return num.toInt().toString()
         }
-            val total = a.toInt() + b.toInt()
-            return total.toString()
+        return num.toString()
     }
 
     fun suma(a: Int, b:Int):Int{
