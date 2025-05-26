@@ -30,12 +30,9 @@ class MainActivity : AppCompatActivity() {
         val btnOperar = findViewById<Button>(R.id.btnSuma)
 
         btnOperar.setOnClickListener{
-
             //clear code....
             val cal = Calculadora()
             tvR.text = cal.suma(et1.text.toString(), et2.text.toString())
-
-
         }
 
     }
