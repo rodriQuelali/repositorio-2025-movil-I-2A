@@ -32,7 +32,7 @@ class radio : AppCompatActivity() {
         btnOpe.setOnClickListener{
             if(rbSuma.isChecked == true) {
 
-                Toast.makeText(this, "la suma es ${Calculadora().suma(txt1.text.toString().toInt(),txt2.text.toString().toInt())}", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(this, "la suma es ${Calculadora().suma(txt1.text.toString(),txt2.text.toString())}", Toast.LENGTH_SHORT).show()
             }
             if (rbResta.isChecked == true){
                 Toast.makeText(this, "la suma es ${txt1.text.toString().toInt() - txt2.text.toString().toInt()}", Toast.LENGTH_SHORT).show()

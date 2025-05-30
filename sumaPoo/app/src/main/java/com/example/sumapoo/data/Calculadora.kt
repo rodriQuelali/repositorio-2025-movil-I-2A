@@ -12,34 +12,37 @@ class Calculadora  {
         return data
     }
 
+    fun resta(a: String, b:String):String{
+        val total = a.toFloat() - b.toFloat()
+        val redon = (total * 100.0).roundToInt() / 100.0
+        val data = validarEnteroDecimal(redon.toString())
+        return data
+    }
+
+    fun Multiplicacion(a: String, b:String):String{
+        val total = a.toFloat() * b.toFloat()
+        val redon = (total * 100.0).roundToInt() / 100.0
+        val data = validarEnteroDecimal(redon.toString())
+        return data
+    }
+
+    fun division(a: String, b:String):String{
+        if (b.toFloat() != 0.0f){
+            val total = a.toFloat() / b.toFloat()
+            val redon = (total * 100.0).roundToInt() / 100.0
+            val data = validarEnteroDecimal(redon.toString())
+            return data
+        }
+        return "Err..."
+
+    }
+
     private fun validarEnteroDecimal(t:String):String{
         val num = t.toFloat()
         return if (num % 1.0f == 0.0f)  num.toInt().toString() else num.toString()
     }
 
-
-
-
-
-
-
-    /*
-    private Int numeroUno;
-    private Int numeroDos;
-    private Int resultado;
-
-    function Calculadora(numeroUno: Int, numeroDos:Int, resultado:Int){
-       this.numeroUno = numeroUno
-        this.numeroDos = numeroDos
-        this.resultado = resultado
-    }
-
-    funtion int sumar(){
-
-    }
-    */
-
-    //metodos
+    
 
 
 }
