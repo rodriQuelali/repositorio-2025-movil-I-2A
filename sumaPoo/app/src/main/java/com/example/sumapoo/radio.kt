@@ -29,15 +29,16 @@ class radio : AppCompatActivity() {
         val rbResta = findViewById<RadioButton>(R.id.rbResta)
 
         val btnOpe = findViewById<Button>(R.id.btnRb)
-        btnOpe.setOnClickListener{
-            if(rbSuma.isChecked == true) {
-
-                //Toast.makeText(this, "la suma es ${Calculadora().suma(txt1.text.toString(),txt2.text.toString())}", Toast.LENGTH_SHORT).show()
+        rbSuma.setOnClickListener{
+            if(rbSuma.isChecked) {
+                Toast.makeText(this, "la suma es ${Calculadora().suma(txt1.text.toString(),txt2.text.toString())}", Toast.LENGTH_SHORT).show()
             }
-            if (rbResta.isChecked == true){
-                Toast.makeText(this, "la suma es ${txt1.text.toString().toInt() - txt2.text.toString().toInt()}", Toast.LENGTH_SHORT).show()
-            }
+        }
 
+        rbResta.setOnClickListener{
+            if (rbResta.isChecked){
+                Toast.makeText(this, "la resta es ${Calculadora().resta(txt1.text.toString(),txt2.text.toString())}", Toast.LENGTH_SHORT).show()
+            }
         }
 
     }
