@@ -21,6 +21,7 @@ class inicio : AppCompatActivity() {
 
         val btnSuma = findViewById<Button>(R.id.btnCalculadora)
         val btnRadio = findViewById<Button>(R.id.btnRadios)
+        val btnSpinner = findViewById<Button>(R.id.btnSpinner)
 
         btnRadio.setOnClickListener {
             val i = Intent(this, radio::class.java)
@@ -28,6 +29,11 @@ class inicio : AppCompatActivity() {
         }
         btnSuma.setOnClickListener{
             val i = Intent(this, MainActivity::class.java)
+            startActivity(i)
+        }
+
+        btnSpinner.setOnClickListener{
+            val i = Intent(this, Spinner::class.java)
             startActivity(i)
         }
     }
