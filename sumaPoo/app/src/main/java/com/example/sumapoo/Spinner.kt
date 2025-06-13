@@ -23,9 +23,16 @@ class Spinner : AppCompatActivity() {
             insets
         }
 
+        /*
+        * Confeccionar la siguiente aplicacion utilizando Spinner:
+        * - listar los datos de: SUMA, RESTA, MULTIPLICACION y DIVISION.
+        * - Que realiza la operacion al seleccionar cada Item.
+        * - Ojo se deve de seleccionar y operar, no utilizar otro Button.
+        * - La entrega se realiza el dia Lunes a primero hora, subir su proyecto a su repositorio o llevarlo en un USB*/
+
         val spin:Spinner = findViewById(R.id.spOper)
 
-        val lista:MutableList<String> = mutableListOf("sumar", "restar", "multiplicar", "dividir", "Raiz cuadrada")
+        val lista:MutableList<String> = mutableListOf("Lista de Operaciones.....","sumar", "restar", "multiplicar", "dividir", "Raiz cuadrada")
         val adap = ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, lista)
         spin.adapter = adap
 
@@ -36,6 +43,7 @@ class Spinner : AppCompatActivity() {
                 position: Int,
                 id: Long
             ) {
+
                 val selectedItem = parent?.getItemAtPosition(position).toString()
                 Toast.makeText(this@Spinner, "$selectedItem", Toast.LENGTH_SHORT).show()
             }
