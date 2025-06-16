@@ -5,6 +5,8 @@ import android.view.View
 import android.widget.Adapter
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Button
+import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -13,6 +15,14 @@ import android.widget.Spinner
 import android.widget.Toast
 
 class Spinner : AppCompatActivity() {
+
+    lateinit var spin: Spinner
+    lateinit var txtAdd: EditText
+    lateinit var btnAdd: Button
+
+    lateinit var lista:MutableList<String>
+    lateinit var adap:ArrayAdapter<String>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -30,10 +40,11 @@ class Spinner : AppCompatActivity() {
         * - Ojo se deve de seleccionar y operar, no utilizar otro Button.
         * - La entrega se realiza el dia Lunes a primero hora, subir su proyecto a su repositorio o llevarlo en un USB*/
 
-        val spin:Spinner = findViewById(R.id.spOper)
+        addR()
+        stateButton()
 
-        val lista:MutableList<String> = mutableListOf("Lista de Operaciones.....","sumar", "restar", "multiplicar", "dividir", "Raiz cuadrada")
-        val adap = ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, lista)
+        lista = mutableListOf("Lista de Operaciones.....","sumar", "restar", "multiplicar", "dividir", "Raiz cuadrada")
+        adap = ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, lista)
         spin.adapter = adap
 
         spin.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
@@ -54,5 +65,18 @@ class Spinner : AppCompatActivity() {
 
         }
 
+    }
+
+    fun addR(){
+        spin= findViewById(R.id.spOper)
+        txtAdd = findViewById<EditText>(R.id.txtAdd)
+        btnAdd = findViewById<Button>(R.id.btnAdd)
+    }
+
+    fun stateButton (){
+        btnAdd.setOnClickListener {
+            lista.add(txtAdd.text.toString())
+            spin.adapter = adap
+        }
     }
 }
