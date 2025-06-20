@@ -2,6 +2,8 @@ package com.example.sumapoo
 
 import android.os.Bundle
 import android.widget.ArrayAdapter
+import android.widget.Button
+import android.widget.EditText
 import android.widget.ListView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -12,6 +14,10 @@ import androidx.core.view.WindowInsetsCompat
 class ListView : AppCompatActivity() {
 
     lateinit var lvPaises: ListView
+    lateinit var btnAddList: Button
+    lateinit var txtAddPais: EditText
+    lateinit var txtAddPobla: EditText
+
     lateinit var adapter: ArrayAdapter<String>
 
     lateinit var listaPaises: MutableList<String>
@@ -27,6 +33,7 @@ class ListView : AppCompatActivity() {
             insets
         }
         initR()
+        addPaises()
         listaPaises = mutableListOf("Bolivia", "Colombia")
         listaProblacion = mutableListOf(2555, 45555)
 
@@ -40,5 +47,16 @@ class ListView : AppCompatActivity() {
 
     fun initR(){
         lvPaises = findViewById(R.id.ltView)
+        btnAddList = findViewById(R.id.btnAddList)
+        txtAddPais = findViewById(R.id.txtAddPais)
+        txtAddPobla = findViewById(R.id.txtAddPobla)
+    }
+
+    fun addPaises(){
+        btnAddList.setOnClickListener {
+            listaPaises.add(txtAddPais.text.toString())
+            listaProblacion.add(txtAddPobla.text.toString().toInt())
+            lvPaises.adapter=adapter
+        }
     }
 }
