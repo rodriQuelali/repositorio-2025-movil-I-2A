@@ -10,6 +10,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.sumapoo.data.Pais
 
 class ListView : AppCompatActivity() {
 
@@ -34,8 +35,8 @@ class ListView : AppCompatActivity() {
         }
         initR()
         addPaises()
-        listaPaises = mutableListOf("Bolivia", "Colombia")
-        listaProblacion = mutableListOf(2555, 45555)
+        listaPaises = mutableListOf()
+        listaProblacion = mutableListOf()
 
         adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listaPaises)
         lvPaises.adapter=adapter
@@ -54,8 +55,9 @@ class ListView : AppCompatActivity() {
 
     fun addPaises(){
         btnAddList.setOnClickListener {
-            listaPaises.add(txtAddPais.text.toString())
-            listaProblacion.add(txtAddPobla.text.toString().toInt())
+            val data: Pais= Pais(txtAddPais.text.toString(), txtAddPobla.text.toString().toInt())
+            listaPaises.add(data.nombre.toString())
+            listaProblacion.add(data.problacion)
             lvPaises.adapter=adapter
         }
     }
