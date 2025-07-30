@@ -13,16 +13,22 @@
         android:theme="@style/Theme.SumaPoo"
         tools:targetApi="31">
         <activity
-            android:name=".ListView"
+            android:name=".view.RecircleyViewMain"
             android:exported="false" />
         <activity
-            android:name=".Spinner"
+            android:name=".view.examen2dobim"
             android:exported="false" />
         <activity
-            android:name=".radio"
+            android:name=".view.ListView"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".view.Spinner"
+            android:exported="false" />
+        <activity
+            android:name=".view.radio"
+            android:exported="false" />
+        <activity
+            android:name=".view.MainActivity"
             android:exported="false" />
         <activity
             android:name=".inicio"

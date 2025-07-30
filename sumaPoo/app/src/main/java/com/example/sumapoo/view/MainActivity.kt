@@ -1,13 +1,13 @@
-package com.example.sumapoo
+package com.example.sumapoo.view
 
 import android.os.Bundle
 import android.widget.Button
-import android.widget.EditText
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.sumapoo.R
 import com.example.sumapoo.data.Calculadora
 import com.google.android.material.textfield.TextInputEditText
 

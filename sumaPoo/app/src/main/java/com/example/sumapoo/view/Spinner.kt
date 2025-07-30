@@ -1,8 +1,7 @@
-package com.example.sumapoo
+package com.example.sumapoo.view
 
 import android.os.Bundle
 import android.view.View
-import android.widget.Adapter
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
@@ -13,6 +12,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import android.widget.Spinner
 import android.widget.Toast
+import com.example.sumapoo.R
 
 class Spinner : AppCompatActivity() {
 

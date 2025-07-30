@@ -4,7 +4,6 @@ import kotlin.math.roundToInt
 
 class Calculadora  {
 
-
     fun suma(a: String, b:String):String{
         val total = a.toFloat() + b.toFloat()
         val redon = (total * 100.0).roundToInt() / 100.0

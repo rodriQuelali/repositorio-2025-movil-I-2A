@@ -1,4 +1,4 @@
-package com.example.sumapoo
+package com.example.sumapoo.view
 
 import android.os.Bundle
 import android.widget.ArrayAdapter
@@ -10,6 +10,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.sumapoo.R
 import com.example.sumapoo.data.Pais
 
 class ListView : AppCompatActivity() {
@@ -37,6 +38,12 @@ class ListView : AppCompatActivity() {
         addPaises()
         listaPaises = mutableListOf()
         listaProblacion = mutableListOf()
+
+
+        /* LISTVIEW----array o lista
+        * lista-- edit, add, remove, etc...
+        * Adapter -- insertar los datos a mi listView o spinner, ya es personalizado,
+        * no se puede agregar, botones, imagenes,etc...*/
 
         adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listaPaises)
         lvPaises.adapter=adapter

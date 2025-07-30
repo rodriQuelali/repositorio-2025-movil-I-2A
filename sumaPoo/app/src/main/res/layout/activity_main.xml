@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/design_default_color_secondary_variant"
     android:padding="20dp"
-    tools:context=".MainActivity">
+    tools:context=".view.MainActivity">
 
 
     <com.google.android.material.textfield.TextInputLayout
