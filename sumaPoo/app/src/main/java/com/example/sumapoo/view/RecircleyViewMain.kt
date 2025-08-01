@@ -8,6 +8,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sumapoo.R
+import com.example.sumapoo.data.Pais
 import com.example.sumapoo.data.adapter.NameAdapter
 
 
@@ -37,7 +38,9 @@ class RecircleyViewMain : AppCompatActivity() {
 
         recirCley = findViewById(R.id.rViewPersona)
         recirCley.layoutManager = LinearLayoutManager(this)
-        val adapter = NameAdapter(names)
+        val listaPaises: List<Pais> = listOf(Pais("Bolivia", 1222222))
+
+        val adapter = NameAdapter(listaPaises)
         recirCley.adapter = adapter
 
 

@@ -6,9 +6,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sumapoo.R
+import com.example.sumapoo.data.Pais
 
 
-class NameAdapter(private val names: List<String>) :
+class NameAdapter(private val paises: List<Pais>) :
     RecyclerView.Adapter<NameAdapter.NameViewHolder>() {
 
     class NameViewHolder (itemView: View):RecyclerView.ViewHolder(itemView){
@@ -22,12 +23,12 @@ class NameAdapter(private val names: List<String>) :
     }
 
     override fun onBindViewHolder(holder: NameViewHolder, position: Int) {
-       val name = names[position]
+       val name = paises[position].nombre
         holder.itemText.text = name
 
     }
 
-    override fun getItemCount(): Int = names.size
+    override fun getItemCount(): Int = paises.size
 
 
 }
