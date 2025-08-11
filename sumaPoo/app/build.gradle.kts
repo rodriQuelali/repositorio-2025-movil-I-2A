@@ -33,6 +33,9 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+    buildFeatures {
+        viewBinding = true // Habilitamos View Binding para facilitar el acceso a las vistas
+    }
 }
 
 dependencies {
@@ -46,4 +49,7 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    implementation("com.github.bumptech.glide:glide:4.16.0") // La versión puede variar, revisa la más reciente
+    
 }

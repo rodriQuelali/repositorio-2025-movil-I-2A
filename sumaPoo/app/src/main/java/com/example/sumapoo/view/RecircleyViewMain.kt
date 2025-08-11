@@ -1,6 +1,8 @@
 package com.example.sumapoo.view
 
 import android.os.Bundle
+import android.widget.Button
+import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -10,41 +12,34 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.sumapoo.R
 import com.example.sumapoo.data.Pais
 import com.example.sumapoo.data.adapter.NameAdapter
+import com.example.sumapoo.databinding.ActivityMainBinding
+import com.example.sumapoo.databinding.ActivityRecircleyViewMainBinding
 
 
 class RecircleyViewMain : AppCompatActivity() {
 
-    //private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityRecircleyViewMainBinding
     private lateinit var recirCley: RecyclerView
+
+    private lateinit var txtN:EditText
+    private lateinit var txtPobla:EditText
+    private lateinit var butonEs:Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_recircley_view_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+        binding = ActivityRecircleyViewMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        // 1. Preparar los datos
-        val names = listOf(
-            "Alice", "Bob", "Charlie", "David", "Eve", "Frank",
-            "Grace", "Heidi", "Ivan", "Judy", "Kim", "Liam",
-            "Mia", "Noah", "Olivia", "Peter", "Quinn", "Rachel",
-            "Sam", "Tina", "Uma", "Victor", "Wendy", "Xavier",
-            "Yara", "Zack", "Anna", "Ben", "Catherine", "Daniel",
-            "Ella", "Felix", "Georgia", "Harry", "Isabel", "Jack"
-        )
 
-        recirCley = findViewById(R.id.rViewPersona)
-        recirCley.layoutManager = LinearLayoutManager(this)
+
+        //recirCley = findViewById(R.id.rViewPersona)
+        binding.rViewPersona.layoutManager = LinearLayoutManager(this)
         val listaPaises: List<Pais> = listOf(Pais("Bolivia", 1222222))
 
         val adapter = NameAdapter(listaPaises)
-        recirCley.adapter = adapter
-
-
-
+        binding.rViewPersona.adapter = adapter
 
     }
+
+
 }

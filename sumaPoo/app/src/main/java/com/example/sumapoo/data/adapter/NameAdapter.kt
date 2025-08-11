@@ -14,6 +14,7 @@ class NameAdapter(private val paises: List<Pais>) :
 
     class NameViewHolder (itemView: View):RecyclerView.ViewHolder(itemView){
         val itemText: TextView = itemView.findViewById(R.id.textViewName)
+        val itemPoblacion: TextView = itemView.findViewById(R.id.subtitle)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NameViewHolder {
@@ -24,6 +25,8 @@ class NameAdapter(private val paises: List<Pais>) :
 
     override fun onBindViewHolder(holder: NameViewHolder, position: Int) {
        val name = paises[position].nombre
+        val poblacion = paises[position].problacion
+        holder.itemPoblacion.text = poblacion.toString()
         holder.itemText.text = name
 
     }
