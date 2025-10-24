@@ -33,6 +33,7 @@ class inicio : AppCompatActivity() {
         val btnRecircley = findViewById<Button>(R.id.btnRecircley)
         val btnRecirlButtonIMG = findViewById<Button>(R.id.btnRebuttonIMG)
 
+
         btnRadio.setOnClickListener {
             val i = Intent(this, radio::class.java)
             startActivity(i)
@@ -61,5 +62,7 @@ class inicio : AppCompatActivity() {
             val i = Intent(this, RecircleirViewButtonImg::class.java)
             startActivity(i)
         }
+
+
     }
 }

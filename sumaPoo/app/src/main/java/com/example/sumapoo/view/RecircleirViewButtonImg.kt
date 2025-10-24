@@ -52,8 +52,8 @@ class RecircleirViewButtonImg : AppCompatActivity() {
                     // 2. Modifica el estado del item
                     it.isButtonEnabled = !it.isButtonEnabled // Ejemplo: alternar estado
                     // O podrías tener una lógica más compleja:
-                    // it.buttonText = "Procesando..."
-                    // it.isButtonEnabled = false
+                    //it.buttonText = "Procesando..."
+                    //it.isButtonEnabled = false
                     // ... hacer alguna operación asíncrona ...
                     // luego, en el callback de esa operación, actualizar el item de nuevo.
                 }
@@ -78,8 +78,8 @@ class RecircleirViewButtonImg : AppCompatActivity() {
     private fun loadInitialData() {
         // Simulación de carga de datos
         currentList = mutableListOf(
-            ItemModel("1", "R.drawable.ic_launcher_foreground", buttonText = "Acción 1", isButtonEnabled = true),
-            ItemModel("2", "URL_IMAGEN_2", buttonText = "Acción 2", isButtonEnabled = false),
+            ItemModel("1", R.drawable.img, buttonText = "Acción 1", isButtonEnabled = true),
+            ItemModel("2", "https://rickandmortyapi.com/api/character/avatar/1.jpeg", buttonText = "Acción 222", isButtonEnabled = false),
             ItemModel("3", null, buttonText = "Acción 3", isButtonEnabled = true, isImageVisible = false) // Sin imagen
         )
         myItemAdapter.submitList(currentList.map { it.copy() }) // Envía una copia para la primera carga
