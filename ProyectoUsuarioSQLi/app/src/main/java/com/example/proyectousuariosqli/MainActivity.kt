@@ -28,5 +28,7 @@ class MainActivity : AppCompatActivity() {
         // VINCULAR EL BOTTOM NAVIGATION CON EL NAVCONTROLLER
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         bottomNavigationView.setupWithNavController(navController)
+
+
     }
 }
