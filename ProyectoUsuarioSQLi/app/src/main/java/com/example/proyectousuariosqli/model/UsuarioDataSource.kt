@@ -18,9 +18,9 @@ class UsuarioDataSource (context: Context){
     fun insertUsuario(usuario: Usuario):Long{
         val bd = sqliAdmin.writableDatabase
         val registro = ContentValues()
-        registro.put("nombre", usuario.setNombre())
-        registro.put("correo", usuario.setCorreo())
-        registro.put("password", usuario.setPassword())
+        registro.put("nombre", usuario.getNombre())
+        registro.put("correo", usuario.getCorreo())
+        registro.put("password", usuario.getPassword())
         val datResdult = bd.insert("usuario", null, registro)
         bd.close()
         return datResdult
@@ -37,10 +37,10 @@ class UsuarioDataSource (context: Context){
     fun updateUsuario(usuario: Usuario): Int{
         val bd = sqliAdmin.writableDatabase
         val registro = ContentValues()
-        registro.put("nombre", usuario.setNombre())
-        registro.put("correo", usuario.setCorreo())
-        registro.put("password", usuario.setPassword())
-        val cant = bd.update("usuario", registro, "codigo=${usuario.setCodigo().toString()}", null)
+        registro.put("nombre", usuario.getNombre())
+        registro.put("correo", usuario.getCorreo())
+        registro.put("password", usuario.getPassword())
+        val cant = bd.update("usuario", registro, "codigo=${usuario.getCodigo().toString()}", null)
         bd.close()
         return cant
     }

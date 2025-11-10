@@ -9,9 +9,9 @@ class Usuario(
     init {
         codigo = 1
     }
-    fun setNombre() = this.nombre
-    fun setCorreo() = this.nombre
-    fun setPassword() = this.nombre
-    fun setCodigo () = this.codigo
+    fun getNombre() = this.nombre
+    fun getCorreo() = this.correo
+    fun getPassword() = this.password
+    fun getCodigo () = this.codigo
 
 }

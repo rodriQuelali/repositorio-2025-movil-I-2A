@@ -5,7 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.Toast
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModel
 import com.example.proyectousuariosqli.R
+import com.example.proyectousuariosqli.model.Usuario
+import com.example.proyectousuariosqli.viewModel.usuario.UsuarioViewModel
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,6 +29,8 @@ class RegistroUsuario : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    private val viewModel: UsuarioViewModel by viewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -36,6 +45,34 @@ class RegistroUsuario : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_registro_usuario, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val btnRegistrar = view.findViewById<Button>(R.id.btnRegister)
+        val alan = Usuario(nombre = "alan", correo = "gmmm.com", password = "123")
+
+        btnRegistrar.setOnClickListener {
+            //ejecutas registrarUsuairoViewModel(),
+            // se jecutan mesaje , usuarioss, etc....
+            viewModel.registrarUsuairoViewModel(alan)
+        }
+
+        /*btnListar.setOnClickListener {
+            viewModel.cargarUsuarios()
+        }*/
+
+        viewModel.mensaje.observe(viewLifecycleOwner, Observer {
+            //tvMensaje.text = it
+        })
+
+        viewModel.usuarios.observe(viewLifecycleOwner, Observer { lista ->
+            val texto = lista.joinToString("\n") { "${it.getCodigo()} - ${it.getNombre()} - ${it.getCorreo()}" }
+            Toast.makeText(requireContext(), texto.ifEmpty { "Sin usuarios registrados" }, Toast.LENGTH_LONG).show()
+        })
+
+
     }
 
     companion object {

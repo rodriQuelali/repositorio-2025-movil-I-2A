@@ -18,5 +18,8 @@ class UsuarioReppository (context: Context){
         return usuarioDataSource.updateUsuario(usuario)
     }
 
+    fun listaUsuarioRepository(): List<Usuario>{
+        return usuarioDataSource.listarUsuarios()
+    }
 
 }
