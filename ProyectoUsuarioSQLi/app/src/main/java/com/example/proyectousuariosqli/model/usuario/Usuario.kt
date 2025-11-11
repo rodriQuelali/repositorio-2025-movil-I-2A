@@ -1,4 +1,4 @@
-package com.example.proyectousuariosqli.model
+package com.example.proyectousuariosqli.model.usuario
 
 class Usuario(
     private var codigo:Int = 1,
@@ -6,9 +6,7 @@ class Usuario(
     private val correo:String,
     private val password:String) {
 
-    init {
-        codigo = 1
-    }
+
     fun getNombre() = this.nombre
     fun getCorreo() = this.correo
     fun getPassword() = this.password

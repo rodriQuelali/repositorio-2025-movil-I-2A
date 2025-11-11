@@ -6,12 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import com.example.proyectousuariosqli.R
-import com.example.proyectousuariosqli.model.Usuario
+import com.example.proyectousuariosqli.model.usuario.Usuario
 import com.example.proyectousuariosqli.viewModel.usuario.UsuarioViewModel
 
 // TODO: Rename parameter arguments, choose names that match
@@ -51,17 +53,25 @@ class RegistroUsuario : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val btnRegistrar = view.findViewById<Button>(R.id.btnRegister)
-        val alan = Usuario(nombre = "alan", correo = "gmmm.com", password = "123")
+        val tvHaveCount = view.findViewById<TextView>(R.id.tvHaveAccount)
+
+        val txtN = view.findViewById<EditText>(R.id.etNombre)
+        val txtCo = view.findViewById<EditText>(R.id.etCorreo)
+        val txtPas = view.findViewById<EditText>(R.id.etPassword)
+
 
         btnRegistrar.setOnClickListener {
             //ejecutas registrarUsuairoViewModel(),
             // se jecutan mesaje , usuarioss, etc....
-            viewModel.registrarUsuairoViewModel(alan)
+            viewModel.registrarUsuairoViewModel(Usuario(nombre = txtN.text.toString(),
+                correo = txtCo.text.toString(),
+                password = txtPas.text.toString()))
         }
 
-        /*btnListar.setOnClickListener {
-            viewModel.cargarUsuarios()
-        }*/
+        //btnListar.setOnClickListener {
+            //viewModel.listaUsuarioViewModel()
+            //Toast.makeText(requireContext(), "cargar datos", Toast.LENGTH_LONG).show()
+        //}
 
         viewModel.mensaje.observe(viewLifecycleOwner, Observer {
             //tvMensaje.text = it
@@ -69,6 +79,7 @@ class RegistroUsuario : Fragment() {
 
         viewModel.usuarios.observe(viewLifecycleOwner, Observer { lista ->
             val texto = lista.joinToString("\n") { "${it.getCodigo()} - ${it.getNombre()} - ${it.getCorreo()}" }
+            tvHaveCount.text = texto
             Toast.makeText(requireContext(), texto.ifEmpty { "Sin usuarios registrados" }, Toast.LENGTH_LONG).show()
         })
 

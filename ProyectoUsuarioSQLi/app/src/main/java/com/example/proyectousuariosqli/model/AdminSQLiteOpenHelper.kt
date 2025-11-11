@@ -11,7 +11,16 @@ class AdminSQLiteOpenHelper(
     version: Int=1):
     SQLiteOpenHelper(context, name, factory,version) {
     override fun onCreate(db: SQLiteDatabase?) {
-        db?.execSQL("create table usuario(codigo int primary key, nombre text, correo text, password text)")
+        db?.execSQL(
+            """
+            CREATE TABLE usuario(
+                codigo INTEGER PRIMARY KEY AUTOINCREMENT,
+                nombre TEXT,
+                correo TEXT,
+                password TEXT
+            )
+            """
+        )
     }
 
     override fun onUpgrade(

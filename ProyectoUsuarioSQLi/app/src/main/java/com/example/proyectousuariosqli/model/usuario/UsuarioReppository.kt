@@ -1,4 +1,4 @@
-package com.example.proyectousuariosqli.model
+package com.example.proyectousuariosqli.model.usuario
 
 import android.content.Context
 

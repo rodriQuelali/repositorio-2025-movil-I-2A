@@ -1,7 +1,8 @@
-package com.example.proyectousuariosqli.model
+package com.example.proyectousuariosqli.model.usuario
 
 import android.content.ContentValues
 import android.content.Context
+import com.example.proyectousuariosqli.model.AdminSQLiteOpenHelper
 
 class UsuarioDataSource (context: Context){
 
@@ -54,6 +55,7 @@ class UsuarioDataSource (context: Context){
 
         if (cursor.moveToFirst()) {
             do {
+                println(cursor.getColumnIndexOrThrow("codigo"))
                 lista.add(
                     Usuario(
                         codigo = cursor.getInt(cursor.getColumnIndexOrThrow("codigo")),
